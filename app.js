@@ -20,6 +20,7 @@ fetch('https://dummyjson.com/products')
                                     <h5 class="card-title text-truncate">${item.title}</h5>
                                     <p class="card-text text-success fw-bold">$${item.price.toFixed(2)}</p>
                                     <button class="btn btn-primary btn-sm w-100" onclick="addtocart(${item.id})">Add to Cart</button>
+                                    <button class="btn btn-secondary btn-sm w-100 mt-2" onclick="seemore(${item.id})">see more</button>
                                 </div>
                             </div>
                         </div>
@@ -55,5 +56,9 @@ const addtocart = (id)=>{
       })
 }
 
-
+const seemore = (id)=>{
+    window.location = "seemore.html"
+    console.log(id)
+    localStorage.setItem("id",JSON.stringify(id))
+}
 renderproducts()
