@@ -7,7 +7,6 @@ This is a simple e-commerce application that allows users to browse products, ad
 - **Product Listing**: View a list of available products with images, names, and prices.
 - **Product Details**: Click on a product to see detailed information.
 - **Shopping Cart**: Add products to the cart and manage your selections.
-- **User Authentication**: Register and log in to your account.
 - **Checkout Process**: Complete purchases easily.
 - **Contact Page**: Get in touch for support or inquiries.
 - **Responsive Design**: Accessible on both desktop and mobile devices.
@@ -20,4 +19,4 @@ This is a simple e-commerce application that allows users to browse products, ad
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mohsinalimughale/e-commerce-app.git
+   git clone https://github.com/yourusername/e-commerce-app.git
