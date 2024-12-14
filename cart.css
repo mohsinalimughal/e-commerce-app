@@ -1,0 +1,8 @@
+:root {
+    --primary-color: #4CAF50;    /* Green for prices */
+    --secondary-color: #FF9800; /* Orange for highlights */
+    --background-color: #F9F9F9; /* Light Gray for backgrounds */
+    --text-color: #333333;       /* Dark Gray for text */
+    --accent-color: #E91E63;     /* Pink for remove button */
+    --border-color: #E0E0E0;     /* Light Gray for borders */
+}
