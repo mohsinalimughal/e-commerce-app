@@ -19,4 +19,4 @@ This is a simple e-commerce application that allows users to browse products, ad
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/e-commerce-app.git
+   git clone https://github.com/mohsinalimughal/e-commerce-app.git
