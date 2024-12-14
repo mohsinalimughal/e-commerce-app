@@ -46,14 +46,34 @@ cart.map((item ,index)=>{
 })
 }
 renderitems()
-const removefromcart = (index)=>{
-           
-       cart.splice(index,1)
-       cartitems.innerHTML =``
-       renderitems()
-       localStorage.setItem("cart",JSON.stringify(cart))
+const removefromcart = (index) => {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            
+            cart.splice(index, 1);
+            
+          
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your item has been removed.",
+                icon: "success"
+            });
 
-}
+            
+            cartitems.innerHTML = "";
+            renderitems();
+            localStorage.setItem("cart", JSON.stringify(cart)); 
+        }
+    });
+};
 
 const addquantity = (index)=>{
     console.log("add clicked",index)

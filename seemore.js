@@ -57,6 +57,7 @@ const renderproduct = ()=>{
     renderproduct()
 
 const addtocart = (id)=>{
+    Swal.fire("Product added to cart!");
     console.log(id)
       fetch(`https://dummyjson.com/products/${id}`)
       .then(res =>res.json())
