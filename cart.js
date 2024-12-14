@@ -1,9 +1,16 @@
-const cart = JSON.parse(localStorage.getItem("cart"))
-console.log(cart)
+
+// console.log(cart)
 
 const cartitems = document.querySelector("#cart-items")
+const totalprice = document.querySelector("#total-price")
+
+    // const cart = JSON.parse(localStorage.getItem("cart"))
+    // localStorage.setItem("cart", JSON.stringify(cart)); 
+
+
 
 const renderitems = ()=>{
+    const cart = JSON.parse(localStorage.getItem("cart"))
 cart.map((item ,index)=>{
     cartitems.innerHTML += `
                        <div class="col">
@@ -47,6 +54,7 @@ cart.map((item ,index)=>{
 }
 renderitems()
 const removefromcart = (index) => {
+    const cart = JSON.parse(localStorage.getItem("cart"))
     Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -73,21 +81,50 @@ const removefromcart = (index) => {
             localStorage.setItem("cart", JSON.stringify(cart)); 
         }
     });
+    totalfunc()
 };
 
 const addquantity = (index)=>{
+    const cart = JSON.parse(localStorage.getItem("cart"))
     console.log("add clicked",index)
     cart[index].quantity++
     console.log(cart[index])
     cartitems.innerHTML =``
     renderitems()
+    totalfunc()
     localStorage.setItem("cart",JSON.stringify(cart))
 }
 const minusquantity = (index)=>{
+    const cart = JSON.parse(localStorage.getItem("cart"))
     console.log("minus clicked",index)
     cart[index].quantity--
     console.log(cart[index])
     cartitems.innerHTML =``
     renderitems()
+    totalfunc()
     localStorage.setItem("cart",JSON.stringify(cart))
 }
+
+
+
+
+const totalfunc = ()=>{
+    var totalPrice = 0
+    const cart = JSON.parse(localStorage.getItem("cart"))
+    cart.map((item)=>{
+        if(item.quantity === 1){
+            console.log(item.price)
+                totalPrice = totalPrice + item.price
+        }else{
+            totalPrice = totalPrice + (item.price*item.quantity)
+        }
+    })
+    totalprice.innerHTML = totalPrice
+}
+
+totalfunc()
+
+
+
+
+
